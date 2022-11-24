@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szopatapp Online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Righteous);
+        
+        html,body {
+            background-color: hsla(230,40%,50%,1);
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            overflow: hidden
+        }
+
+        h1 {
+        color: white;
+        font-family: 'Righteous', serif;
+        font-size: 10vw;
+        }
+
+        h3 {
+            color: white;
+            font-family: 'Righteous', serif;
+            font-size: 4vw;
+        }
+
+        p {
+            color: white;
+            font-family: 'Righteous', serif;
+            font-size: 2vw;  
+        }
+
+        #btn {
+            margin: 0;
+            position: absolute;
+            top: 90%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="container-fluid">
+            <h1>Szopatapp</h1>
+            <h3>Online!</h3>
+            <p id="textbox">Erre nem készültél fel...</p>
+            <button id="btn" class="btn btn-primary fixed-bottom" onclick="myFunction()"><p>A feladatod</p></button>
+        </div>
+    
+    <script>
+        const szopatapp = [
+            "Csinálj meg még kettő feladatot!",
+            "Egyél meg egy nyers tojást!",
+            "Ma te mosogatsz!",
+            "Vizicsata MOST!",
+            "Mondd ki 1500-szor a jobb oldaladon lévő nevét!",
+            "Moss fogat alkohollal!",
+            "Ezt megúsztad, nincs semmi dolgod!",
+            "Fogj egy legyet!",
+            "Énekeld el hangosan egy boltban a süss fel napot!",
+            "Táncolj a DOTA-ra!",
+            "Állj meg egyhelyben és ordibáld közben hogy ÉN EGY FA VAGYOK!",
+            "Hívd meg a bal oldaladon lévőt egy energiaitalra!",
+            "Rajtad kívül mindenki megcsinál még egy feladatot!",
+            "Öntsd le magad egy vödör vízzel!",
+            "Írj egy rap zenét a veled szemben lévő emberről!",
+            "Igyál meg egy liter tejet!",
+            "A bal oldaladon lévő ember rárajzolhat valamit a homlokodra!",
+            "Nyomj tíz fekvőtámaszt!",
+            "Menj be egy kocsmába és kérj egy pohár vizet!",
+            "Fejelj ketté egy kókuszt!",
+            "Kérdezz meg egy idős hölgyet, hogy van e eladó bojlere!",
+            "Próbálj meg felszedni egy csajt egy szar csajozós dumával, amit a jobb oldaladon lévő ember mond!",
+            "Adj elő egy esőtáncot!",
+            "Menj el egy megálló távolságot és nézd meg hogy ott vagyok e!",
+            "Keress egy négy levelű lóherét!",
+            "A következő egy órában mindenkivel bunkónak kell lenned!",
+            "Összekötözött lábbal kell menned a következő két órában!",
+            "Hívj fel a névjegyzékedből egy telefonszámot, és kérdezd meg hogy jól van e a Vertebra Lumbalis-a!",
+            "Oldj meg egy másodfokú egyenletet vagy húzz hármat!",
+            "Válogass szét egy csomag betűtésztát!",
+            "Tekerj a fejedre WC-papírt, az legyen a sapkád a következő három órában!",
+            "Állítsd be a bal oldaladon lévő ember arcát Facebook profilképnek 12 óráig!",
+            "Nem telefonozhatsz két órán keresztül!",
+            "Igyál meg egy pohár bort 15 másodperc alatt!",
+            "Borotválj egy csíkot a szemöldöködbe!",
+            "Keverj össze 3 különböző alkoholt egy 5dl-es pohárba, ezután húzd le!",
+            "Szelfizz a WC-vel és tedd ki facebook napodba!",
+            "A következő három órában a nadrágodra fel kell venned egy alsógatyát!",
+            "Cserélj ruhát a tőled jobbra lévő emberrel!",
+            "Egyél meg egy hangyát!",
+            "Moonwalk-olj be egy áruházba!",
+            "Hívj ki valakit egy sörpongra! Vesztes iszik vagy 2-t húz!",
+            "T-pózolj 1 óráig!",
+            "Hívj ki valakit egy bottle flip-re! Vesztes iszik vagy húz 2-t!",
+            "Fortnite tánc egy boltban!",
+            "Kezdj el énekelni egy zenét, aki nem tudja folytatni az iszik vagy húz 2-t!",
+            "Hívjk ki valakit kő, papír, ollóra! Vesztes iszik vagy húz 2-t!",
+            "Szájmaszkban kell lenned 3 óráig!",
+            "Egyél meg egy csípős paprikát!",
+            "Nem káromkodhatsz 2 órán keresztül!",
+            "Csak suttogva beszélhetsz 1 órán keresztül!",
+            "Google translate hanggal kell beszélned 3 óráig!",
+            "Nem mondhatsz I betűt 1 órán keresztül!",
+            "Bekötözött szemmel kell lenned 1 órán keresztül!",
+            "Hívj ki valakit egy szkanderre! Vesztes iszik vagy húz 2-t!",
+            "Aki utoljára mondja hogy FASZ, az iszik vagy húz 2-t!",
+            "Mindenki mond egy sörmárkát, aki nem tud az iszik vagy húz 2-t!"
+        ];
+
+
+        function myFunction() {
+            var szam = Math.floor(Math.random() * szopatapp.length);
+            document.getElementById("textbox").innerHTML = szopatapp[szam];
+        }
+    </script>
+</body>
+</html>
